@@ -1,0 +1,37 @@
+* {
+  margin: 4px;
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: rgb(185, 252, 252);
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+
+h1 {
+  background-color: hwb(73 80% 3%);
+  padding: 20px 20px;
+  border-radius: 20px;
+  color: #fa9191;
+}
+
+ol {
+  font-size: 24px;
+  background-color: hwb(73 80% 3%);
+  padding: 20px 20px;
+  border-radius: 20px;
+  color: #fa9191;
+}
+
+div {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -30px;
+}
