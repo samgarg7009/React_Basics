@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 //import App from "./App";
-import Card from "./challenge5(listOf5Series)/Cards";
-import Sdata from "./challenge5(listOf5Series)/Sdata";
+import Card from "./Cards";
+import Sdata from "./Sdata";
 
 ReactDOM.render(
   <>

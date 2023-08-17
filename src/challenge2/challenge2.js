@@ -18,7 +18,6 @@ const heading = {
   fontFamily: "'Josefin Sans', sans-serif",
 };
 
-
 ReactDOM.render(
   <>
     <h1 contentEditable="true" style={heading}>

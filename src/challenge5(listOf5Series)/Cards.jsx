@@ -4,7 +4,7 @@ function Card(props) {
     return (
         <>
             <div className="cards">
-                <div className="card">
+                <div className="fullcard">
                     <img
                         src={props.imgsrc}
                         alt="mypic"
@@ -13,7 +13,7 @@ function Card(props) {
                     <div className="card_info">
                         <span className="card_category">{props.title}</span>
                         <h3 className="card_title">{props.sname}</h3>
-                        <a href={props.link} target="_blank">
+                        <a href={props.link} target="_blank" rel="noreferrer">
                             <button className="button"> watch now </button>
                         </a>
                     </div>
