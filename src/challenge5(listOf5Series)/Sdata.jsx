@@ -30,7 +30,7 @@ const Sdata = [
     {
         id: 5,
         imgsrc: "https://wallpapercave.com/wp/B1YynMk.jpg",
-        title: "A Netflix Orignal Series",
+        title: "An amazon Orignal Series",
         sname: "Vampire Diaries",
         link: "https://www.netflix.com/in/title/80990668?sourse=35",
     },
