@@ -1,15 +1,17 @@
-import React from 'react';
-import { add, sub, div, mult } from './challenge4/Calc';
+import React, { Children } from 'react';
+import SlotM from './slotMachine/slotMachine';
 
-function App(){
+//name of component should always start with CAPITAL letter!!!
+
+function App() {
     return (
         <>
-        <ol>
-            <li>sum of two number is {add(2,4)}</li>
-            <li>sum of two number is {sub(2, 4)}</li>
-            <li>sum of two number is {div(2, 4)}</li>
-            <li>sum of two number is {mult (2, 4)}</li>
-        </ol>
+            <h1 className='heading_style'> 🎰 welcome to <span style={{ fontWeight: "bold" }}>The SLot Machine</span> 🎰  </h1>
+            <div className='slotMachine'>
+                <SlotM x="😞" y = "🙂 " z = "🙂 "/>
+                <SlotM x=" 🥭 " y=" 🥭 " z=" 🥭 " />
+                <SlotM x="🕗" y="🕚 " z="🕚 " />
+            </div>
         </>
     );
 }
