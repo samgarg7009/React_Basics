@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 
 // const App = () => {
 //     //const state = useState();
-    
+
 //     let currTime = new Date().toLocaleTimeString();
 //     const [time, SetTime] = useState(currTime);
 
@@ -32,7 +32,7 @@ import React, { useState } from 'react';
 // }
 
 const App = () => {
-    
+
     let currTime = new Date().toLocaleTimeString();
     const [time, SetTime] = useState(currTime);
 
@@ -42,7 +42,7 @@ const App = () => {
     };
 
     //this function calls Get time every 1sec so there is no need to use button
-    setInterval(GetTime,1000);
+    setInterval(GetTime, 1000);
     return (
         <>
             <h1 className='heading_style'><span>{time}</span>  </h1>
