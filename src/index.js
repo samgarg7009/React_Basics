@@ -7,7 +7,6 @@ import App from "./App";
 
 ReactDOM.render(
   <>
-    {/* <h1 className="heading_style">List of Top 5 netflix seires</h1> */}
     <App/>
   </>,
   document.getElementById("root")

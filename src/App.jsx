@@ -5,50 +5,36 @@ import React, { useState } from 'react';
 //let count = 1;
 
 
-// const App = () => {
-//     //const state = useState();
-    
-//     let currTime = new Date().toLocaleTimeString();
-//     const [time, SetTime] = useState(currTime);
-
-//     const cssStyles = {};
-//     cssStyles.color  = "red";
-//     // if (count < 0) {
-//     //     cssStyles.color = "red";
-//     // }
-//     // if (count > 0) {
-//     //     cssStyles.color = "#25f325";
-//     // }
-//     const GetTime = () => {
-//         SetTime(new Date().toLocaleTimeString());
-//         console.log('clicked');
-//     };
-//     return (
-//         <>
-//             <h1 className='heading_style'><span style={cssStyles}>{time}</span>  </h1>
-//             <button onClick={GetTime}> Get Time</button>
-//         </>
-//     );
-// }
-
 const App = () => {
     
-    let currTime = new Date().toLocaleTimeString();
-    const [time, SetTime] = useState(currTime);
+    const [name, SetName] = useState("");
+    const [fullName,SetFullName] = useState();
 
-    const GetTime = () => {
-        SetTime(new Date().toLocaleTimeString());
-        //console.log('clicked');
-    };
+    const OnSubmit =() =>{
+        SetFullName(name);
+    }
 
-    //this function calls Get time every 1sec so there is no need to use button
-    setInterval(GetTime,1000);
+    const InputClicked= (event) => {
+       // console.log(event.target.value);
+        SetName(event.target.value);
+        
+    }
     return (
         <>
-            <h1 className='heading_style'><span>{time}</span>  </h1>
+        <div>
+                <form>
+                    <div>
+                        <h1> hello {fullName} </h1>
+                        <input type='text' placeholder='enter your name' onChange={InputClicked} value={name} />
+                        <input type='password' placeholder='enter your password' onChange={InputClicked} value={name} />
+                        <button type="submit" onClick={OnSubmit}>  submit 👍 </button>
+                    </div>
+                </form>
+        </div>     
         </>
     );
 }
+
 
 
 export default App;
