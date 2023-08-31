@@ -8,10 +8,16 @@ import React, { useState } from 'react';
 const App = () => {
     
     const [name, SetName] = useState("");
-    const [fullName,SetFullName] = useState();
+    const [fullName,SetFullName] = useState("");
 
-    const OnSubmit =() =>{
+    const [lastName, SetLastName] = useState("");
+
+    const [lastNameNew, SetLastNameNew] = useState("");
+
+    const OnSubmit =(e) =>{
+        e.preventDefault();
         SetFullName(name);
+        SetLastNameNew(lastName)
     }
 
     const InputClicked= (event) => {
@@ -19,15 +25,20 @@ const App = () => {
         SetName(event.target.value);
         
     }
+    const InputClickedTwo = (event) => {
+        // console.log(event.target.value);
+        SetLastName(event.target.value);
+
+    }
     return (
         <>
         <div>
-                <form>
+                <form onSubmit={OnSubmit}>
                     <div>
-                        <h1> hello {fullName} </h1>
+                        <h1> hello {fullName} {lastName}</h1>
                         <input type='text' placeholder='enter your name' onChange={InputClicked} value={name} />
-                        <input type='password' placeholder='enter your password' onChange={InputClicked} value={name} />
-                        <button type="submit" onClick={OnSubmit}>  submit 👍 </button>
+                        <input type='text' placeholder='enter your password' onChange={InputClickedTwo} value={lastName} />
+                        <button type="submit" >  submit 👍 </button>
                     </div>
                 </form>
         </div>     
