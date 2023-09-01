@@ -25,6 +25,10 @@ div {
   align-items: center;
 }
 
+form {
+  width: 50%;
+}
+
 h1 {
   color: green;
   background: transparent;
