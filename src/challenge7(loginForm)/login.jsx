@@ -61,31 +61,31 @@ const App = () => {
             //     };
         }
         )
-        }
+    }
 
 
-const OnSubmit = (e) => {
-    e.preventDefault();
-}
+    const OnSubmit = (e) => {
+        e.preventDefault();
+    }
 
-return (
-    <>
-        <div>
-            <form onSubmit={OnSubmit}>
-                <div>
-                    <h1> hello {fullName.fname} {fullName.lname}</h1>
-                    <p>{fullName.email}</p>
-                    <p>{fullName.phno}</p>
-                    <input type='text' placeholder='enter your first name' name='fName' onChange={InputClicked} value={fullName.fname} />
-                    <input type='text' placeholder='enter your last name' name='lName' onChange={InputClicked} value={fullName.lname} />
-                    <input type='email' placeholder='enter your email' name='email' onChange={InputClicked} value={fullName.email} />
-                    <input type='number' placeholder='enter your phone number' name='phno' onChange={InputClicked} value={fullName.phno} />
-                    <button type="submit" >  submit 👍 </button>
-                </div>
-            </form>
-        </div>
-    </>
-);
+    return (
+        <>
+            <div>
+                <form onSubmit={OnSubmit}>
+                    <div>
+                        <h1> hello {fullName.fname} {fullName.lname}</h1>
+                        <p>{fullName.email}</p>
+                        <p>{fullName.phno}</p>
+                        <input type='text' placeholder='enter your first name' name='fName' onChange={InputClicked} value={fullName.fname} />
+                        <input type='text' placeholder='enter your last name' name='lName' onChange={InputClicked} value={fullName.lname} />
+                        <input type='email' placeholder='enter your email' name='email' onChange={InputClicked} value={fullName.email} />
+                        <input type='number' placeholder='enter your phone number' name='phno' onChange={InputClicked} value={fullName.phno} />
+                        <button type="submit" >  submit 👍 </button>
+                    </div>
+                </form>
+            </div>
+        </>
+    );
 }
 
 
