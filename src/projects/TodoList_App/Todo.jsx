@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 //name of component should always start with CAPITAL letter!!!
 
 //let count = 1;
-
+import TodoList from './TodoList';
 
 const App = () => {
-    const [inputList, setInput] = useState("buy mango");
+    const [inputList, setInput] = useState("");
     const [items, setItems] = useState([]);
 
     const itemEvent = (event) => {
@@ -15,9 +15,21 @@ const App = () => {
 
     const listOfItems = () => {
         setItems((oldItems) => {
-            return [...oldItems, { inputList }];
-        })
+            return [...oldItems, inputList];
+        });
+        //to empty the input field
+        setInput('');
     }
+
+    const deleteItem = (id) => {
+        setItems((oldItems) => {
+            return oldItems.filter((arr, index) => {
+                //return the indices of items which do not match and rest will be filtered out
+                return index !== id;
+            });
+        });
+    };
+
     return (
         <>
             <div className='main_div'>
@@ -25,13 +37,19 @@ const App = () => {
                     <br />
                     <h1> Todo List</h1>
                     <br />
-                    <input type='text' placeholder='Add a item' onChange={itemEvent} ></input>
+                    <input type='text' placeholder='Add a item' value={inputList} onChange={itemEvent}></input>
                     <button onClick={listOfItems}> + </button>
 
                     <ol>
                         {/* <li> {inputList}</li> */}
-                        {items.map((itemval) => {
-                            return <li>{itemval}</li>
+                        {items.map((itemval, index) => {
+                            return (
+                                <TodoList
+                                    key={index}
+                                    id={index}
+                                    text={itemval}
+                                    onSelect={deleteItem} />
+                            );
                         })}
                     </ol>
                 </div>

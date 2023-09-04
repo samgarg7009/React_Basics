@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 //name of component should always start with CAPITAL letter!!!
 
 //let count = 1;
-
+import TodoList from './projects/TodoList_App/TodoList';
 
 const App = () => {
     const [inputList, setInput] = useState("");
@@ -20,6 +20,16 @@ const App = () => {
         //to empty the input field
         setInput('');
     }
+
+    const deleteItem =(id)=> {
+        setItems((oldItems)=>{
+            return oldItems.filter((arr, index) => {
+                //return the indices of items which do not match and rest will be filtered out
+                return index !== id;
+            });
+        });
+    };
+
     return (
         <>
             <div className='main_div'>
@@ -32,8 +42,14 @@ const App = () => {
 
                     <ol>
                         {/* <li> {inputList}</li> */}
-                        {items.map((itemval) => {
-                            <Todo text={itemval}/>
+                        {items.map((itemval,index) => {
+                            return (
+                                <TodoList 
+                                key={index} 
+                                id={index} 
+                                text={itemval} 
+                                onSelect={deleteItem}/>
+                            );
                         })}
                     </ol>
                 </div>
