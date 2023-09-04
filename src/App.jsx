@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 
 
 const App = () => {
-    const [inputList, setInput] = useState("buy mango");
+    const [inputList, setInput] = useState("");
     const [items, setItems] = useState([]);
 
     const itemEvent = (event) => {
@@ -15,8 +15,10 @@ const App = () => {
 
     const listOfItems = () => {
         setItems((oldItems) => {
-            return [...oldItems, { inputList }];
-        })
+            return [...oldItems, inputList];
+        });
+        //to empty the input field
+        setInput('');
     }
     return (
         <>
@@ -25,13 +27,13 @@ const App = () => {
                     <br />
                     <h1> Todo List</h1>
                     <br />
-                    <input type='text' placeholder='Add a item' onChange={itemEvent} ></input>
+                    <input type='text' placeholder='Add a item' value={inputList} onChange={itemEvent}></input>
                     <button onClick={listOfItems}> + </button>
 
                     <ol>
                         {/* <li> {inputList}</li> */}
                         {items.map((itemval) => {
-                            return <li>{itemval}</li>
+                            <Todo text={itemval}/>
                         })}
                     </ol>
                 </div>
