@@ -3,60 +3,41 @@ import React, { useState } from 'react';
 //name of component should always start with CAPITAL letter!!!
 
 //let count = 1;
-import TodoList from './projects/TodoList_App/TodoList';
+
 
 const App = () => {
-    const [inputList, setInput] = useState("");
-    const [items, setItems] = useState([]);
+    //const state = useState();
+    const [count, SetCount] = useState(0);
 
-    const itemEvent = (event) => {
-        setInput(event.target.value);
+    const cssStyles = {};
+    if (count < 0) {
+        cssStyles.color = "red";
     }
-
-    const listOfItems = () => {
-        setItems((oldItems) => {
-            return [...oldItems, inputList];
-        });
-        //to empty the input field
-        setInput('');
+    if (count > 0) {
+        cssStyles.color = "#25f325";
     }
-
-    const deleteItem =(id)=> {
-        setItems((oldItems)=>{
-            return oldItems.filter((arr, index) => {
-                //return the indices of items which do not match and rest will be filtered out
-                return index !== id;
-            });
-        });
+    const IncNum = () => {
+        SetCount(count + 1);
+        //console.log('clicked');
     };
-
+    const DecNum = () => {
+        SetCount(count - 1);
+        //console.log('clicked');
+    };
     return (
         <>
-            <div className='main_div'>
-                <div className='center_div'>
-                    <br />
-                    <h1> Todo List</h1>
-                    <br />
-                    <input type='text' placeholder='Add a item' value={inputList} onChange={itemEvent}></input>
-                    <button onClick={listOfItems}> + </button>
-
-                    <ol>
-                        {/* <li> {inputList}</li> */}
-                        {items.map((itemval,index) => {
-                            return (
-                                <TodoList 
-                                key={index} 
-                                id={index} 
-                                text={itemval} 
-                                onSelect={deleteItem}/>
-                            );
-                        })}
-                    </ol>
-                </div>
+        <div className='main_div'>
+            <div className='center_div'>
+                    <h1 className='heading_style'><span style={cssStyles}>{count}</span>  </h1>
+                    <div className='buttons'>
+                        <button onClick={IncNum}> increase</button>
+                        <button onClick={DecNum}> decrease</button>
+                    </div>
             </div>
+        </div>
+            
+
         </>
     );
 }
-
-
 export default App;
