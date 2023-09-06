@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 
 
 const App = () => {
-    const state = useState();
+    //const state = useState();
     const [count, SetCount] = useState(0);
 
     const cssStyles = {};
@@ -21,16 +21,26 @@ const App = () => {
         //console.log('clicked');
     };
     const DecNum = () => {
-        SetCount(count - 1);
+        if (count > 0)
+            SetCount(count - 1);
+        else {
+            alert('sorry,Zero time.limiy')
+            SetCount(0);
+        }
         //console.log('clicked');
     };
     return (
         <>
-            <h1 className='heading_style'><span style={cssStyles}>{count}</span>  </h1>
-            <div className='buttons'>
-                <button onClick={IncNum}> increase</button>
-                <button onClick={DecNum}> decrease</button>
+            <div className='main_div'>
+                <div className='center_div'>
+                    <h1 className='heading_style'>{count}</h1>
+                    <div className='buttons'>
+                        <button onClick={IncNum}> increase</button>
+                        <button onClick={DecNum}> decrease</button>
+                    </div>
+                </div>
             </div>
+
 
         </>
     );

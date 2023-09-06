@@ -21,21 +21,26 @@ const App = () => {
         //console.log('clicked');
     };
     const DecNum = () => {
+        if(count >0)
         SetCount(count - 1);
-        //console.log('clicked');
+    else {
+        alert('sorry,Zero time.limiy')
+        SetCount(0);
+    }
+      //console.log('clicked');
     };
     return (
         <>
-        <div className='main_div'>
-            <div className='center_div'>
-                    <h1 className='heading_style'><span style={cssStyles}>{count}</span>  </h1>
+            <div className='main_div'>
+                <div className='center_div'>
+                    <h1 className='heading_style'>{count}</h1>
                     <div className='buttons'>
                         <button onClick={IncNum}> increase</button>
                         <button onClick={DecNum}> decrease</button>
                     </div>
+                </div>
             </div>
-        </div>
-            
+
 
         </>
     );

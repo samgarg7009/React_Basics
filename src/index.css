@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #caffff;
+  /* background-color: #caffff; */
 }
 
 .main_div {
@@ -18,22 +18,28 @@
 
 .center_div {
   width: 25%;
-  height: 80vh;
+  height: 60vh;
   background-color: #f4f4f4;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
   text-align: center;
   color: white;
+  font-size: 50px;
   background: transparent;
-  background-color: rgb(5, 156, 156);
+  background-color: rgb(18 20 68);;
+  width: 100%;
   padding: 6px 0 2px 0;
   margin-bottom: 10px;
   box-shadow: 5px 5px 15px -5px rgba(16, 16, 16, 0.3);
 }
 
-input {
+/* input {
   text-align: center;
   height: 30px;
   top: 10px;
@@ -44,62 +50,28 @@ input {
   font-weight: 500;
   width: 60%;
   border-bottom: 2px solid #8566aa;
-}
+} */
 
 button {
   min-height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  /* padding: 15px 20px; */
-  background-color: #8566aa;
-  color: white;
-  font-size: 40px;
+  /* width: 40px; */
+  border-radius: 5%;
+  padding: 0 15px;
+  margin-top: 30px;
+  background-color: rgb(18 20 68);;
+  color: rgb(250, 34, 49);
+  font-size: 20px;
   border: none;
-  outline: none;
-
-  margin-left: 10px;
+  outline: none;  
 }
 
 button:hover {
   background-color: #20bf6b;
 }
 
-ol {
-  margin-top: 30px;
-}
-
-ol li {
-  padding-left: 0px;
-  text-align: left;
-  font-size: 20px;
-  font-weight: 500;
-  min-height: 40px;
+.buttons {
+  width: 100%;
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  color: #8566aa;
-  text-transform: capitalize;
-}
-
-.todo_styles {
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: center;
-}
-
-.todo_styles .fa-times {
-  width: 20px;
-  height: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #8566aa;
-  border-radius: 50%;
-  margin: 0 15px 0 35px;
-  color: aliceblue;
-  box-shadow: 5px 5px 15px -5px rgba(16, 16, 16, 0.3);
-}
-
-.todo_styles .fa-times:hover {
-  color: crimson;
 }
