@@ -1,48 +1,30 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 //name of component should always start with CAPITAL letter!!!
 
-//let count = 1;
+import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 
+const Timer = () => (
+    <>
+        <svg>
+            <defs>
+                <linearGradient id="your-unique-id" x1="1" y1="0" x2="0" y2="0">
+                    <stop offset="5%" stopColor="gold" />
+                    <stop offset="95%" stopColor="red" />
+                </linearGradient>
+            </defs>
+        </svg>
 
-const App = () => {
-    //const state = useState();
-    const [count, SetCount] = useState(0);
+        <CountdownCircleTimer
+            isPlaying
+            duration={60}
+            initialRemainingTime={15}
+            colors="url(#your-unique-id)"
+            colorsTime={[7, 5, 2, 0]}
+        >
+            {({ remainingTime }) => remainingTime}
+        </CountdownCircleTimer>
+    </>
 
-    const cssStyles = {};
-    if (count < 0) {
-        cssStyles.color = "red";
-    }
-    if (count > 0) {
-        cssStyles.color = "#25f325";
-    }
-    const IncNum = () => {
-        SetCount(count + 1);
-        //console.log('clicked');
-    };
-    const DecNum = () => {
-        if(count >0)
-        SetCount(count - 1);
-    else {
-        alert('sorry,Zero time.limiy')
-        SetCount(0);
-    }
-      //console.log('clicked');
-    };
-    return (
-        <>
-            <div className='main_div'>
-                <div className='center_div'>
-                    <h1 className='heading_style'>{count}</h1>
-                    <div className='buttons'>
-                        <button onClick={IncNum}> increase</button>
-                        <button onClick={DecNum}> decrease</button>
-                    </div>
-                </div>
-            </div>
-
-
-        </>
-    );
-}
-export default App;
+)
+export default Timer;

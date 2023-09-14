@@ -65,8 +65,16 @@ button {
   outline: none;  
 }
 
-button:hover {
+/* button:hover {
   background-color: #20bf6b;
+} */
+
+.btn_add:hover {
+  color: rgb(51, 255, 0);
+}
+
+.btn_sub:hover {
+  color: rgb(255, 64, 0);
 }
 
 .buttons {
@@ -75,3 +83,4 @@ button:hover {
   justify-content: space-around;
   align-items: center;
 }
+

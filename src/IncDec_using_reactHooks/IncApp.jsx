@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
+import Button from '@material-ui/core/Button';
+import Tooltip from '@material-ui/core/Tooltip';
 
 //name of component should always start with CAPITAL letter!!!
 
@@ -24,7 +28,7 @@ const App = () => {
         if (count > 0)
             SetCount(count - 1);
         else {
-            alert('sorry,Zero time.limiy')
+            alert('sorry,Zero limit')
             SetCount(0);
         }
         //console.log('clicked');
@@ -35,8 +39,12 @@ const App = () => {
                 <div className='center_div'>
                     <h1 className='heading_style'>{count}</h1>
                     <div className='buttons'>
-                        <button onClick={IncNum}> increase</button>
-                        <button onClick={DecNum}> decrease</button>
+                        <Tooltip title="Add">
+                            <Button variant="contained" onClick={IncNum} className='btn_add'> <AddIcon /></Button>
+                        </Tooltip>
+                        <Tooltip title="decrease">
+                            <Button variant="contained" onClick={DecNum} className='btn_sub'> <RemoveIcon /></Button>
+                        </Tooltip>
                     </div>
                 </div>
             </div>
