@@ -24,7 +24,7 @@ const App = () => {
     const deleteItem = (id) => {
         setItems((oldItems) => {
             return oldItems.filter((arr, index) => {
-                //return the indices of items which do not match and rest will be filtered out
+                //return the indices of items which do not match with id and rest will be filtered out
                 return index !== id;
             });
         });

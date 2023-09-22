@@ -11,20 +11,30 @@ import CreateNote from './CreateNote';
 const GoogleKeep = () => {
     const [addItem, setAddItem] = useState([]); //add item is an array so pass an empty array for initial data 
 
-    const addNote =(note) =>{
+    const AddNote =(note) =>{
         setAddItem((prevData)=>{
             return [...prevData,note];
         })
     }
+    const DeleteItem =(id)=>{
+        setAddItem((oldItems)=>{
+            return oldItems.filter((currData, index) =>{
+                return index !== id;
+            })
+        })
+    }
+
     return (
         <>
             <Header />
-            <CreateNote passNote={addNote}/> 
+            <CreateNote passNote={AddNote}/> 
             {/* passNote is the props use to show the content of createNote on Note */}
              
-            {addItem.map((val ) => {
-                const { id } = val;
-                return <Note key={id} {...val} />;
+            {addItem.map((val,index) => {
+                return (
+                <Note key={index} id={index} {...val}
+                deleteNote ={DeleteItem}
+                />);
                 // {...val} gives everything except id from data object
             })}
             <Footer />
