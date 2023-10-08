@@ -23,18 +23,19 @@
   border-radius: 15px;
 }
 
-h1 {
+/* .navbar {
   text-align: center;
   color: white;
   background: transparent;
   background-color: rgb(5, 156, 156);
-  padding: 6px 0 2px 0;
+  padding: 8px 0 8px 0;
   margin-bottom: 10px;
+  height: 40px;
   font-weight: 500;
   box-shadow: 5px 5px 15px -5px rgba(16, 16, 16, 0.3);
-}
+} */
 
-input {
+/* input {
   text-align: center;
   height: 30px;
   top: 10px;
@@ -45,13 +46,13 @@ input {
   font-weight: 500;
   width: 60%;
   border-bottom: 2px solid #8566aa;
-}
+} */
 
-.new_btn {
+/* .new_btn {
   height: 55px;
   width: 40px;
   border-radius: 50% !important;
-  /* padding: 15px 20px; */
+ 
   background-color: #28dc7f !important;
   color: rgb(229, 19, 19) !important;
   font-size: 40px;
@@ -111,4 +112,31 @@ ol li {
 
 .todo_styles .fa-times:hover {
   color: crimson;
+} */
+
+.nav {
+  background: rgb(2 78 78);
+  margin: auto;
+  padding: 25px;
+  /* max-width: 800px; */
+  width: 100%;
+}
+.nav a {
+  border-radius: 4px;
+  padding: 6px 10px;
+  margin-right: 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.nav a.active {
+  color: #fff;
+  background: #7600dc;
+}
+.nav a.inactive {
+  font-style: italic;
+}
+
+buttonstyle {
+  padding: 20px;
 }
