@@ -1,9 +1,11 @@
 import React from 'react';
+import "./nav.css";
 import { Route, Routes } from 'react-router-dom';
 
 import Contact from './Contact';
 import Error from './ErrorPage';
 import About from './AboutPage';
+import Search from './Search';
 import NavBarComp from './NavBarComp';
 
 // Routes(for newer version of react/ previously called as Switches) ensure that only one component is rendered at a time.
@@ -20,6 +22,7 @@ const ReactRouter = () => {
                 <Route exact path='/' element={<About />} />
                 {/* '/ is for home page and by adding 'exact' it will look for just '/'  */}
                 <Route path='/contact/:name' element={<Contact />} />
+                <Route path='/search' element={<Search />} />
                 <Route path='/*' element={<Error />} />
             </Routes>
         </>
